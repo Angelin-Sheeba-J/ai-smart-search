@@ -1,0 +1,6 @@
+@aisearch_HostAddress = http://localhost:5062
+
+GET {{aisearch_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
