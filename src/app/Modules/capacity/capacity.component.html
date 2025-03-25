@@ -1,0 +1,37 @@
+<h1 class="text-danger fw-bold">Capacity Mapping</h1>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <p class="mb-0">Map assets to predefined list of capabilities.</p>
+    <input 
+      type="text" 
+      class="form-control w-25 rounded-pill" 
+      placeholder=" Search Capacity..." 
+      [(ngModel)]="searchText">
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered text-center">
+        <thead class="table-dark ">
+            <tr>
+                <th>Empire ID</th>
+                <th >Name</th>
+                <th >Description</th>
+                <th >Original Capability</th>
+                <th >Recommended Capacity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(use of capacity | assetFilter:searchText | paginate: { itemsPerPage: itemsPerPage, currentPage: page }; track $index){
+            <tr>
+                <td>{{ use.empireId }}</td>
+                <td>{{ use.name }}</td>
+                <td>{{ use.description }}</td>
+                <td>-</td>
+                <td><button class="rounded-pill btn btn-danger">{{ use.capacity }}</button></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <div class="pagination-container">
+        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+</div>

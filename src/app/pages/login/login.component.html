@@ -1,0 +1,30 @@
+<div class="parent">
+    <div class="container">
+        <h2 class="title">AI SEARCH</h2>
+        <form action="#" [formGroup]="loginform" (ngSubmit)="onLogin()" class="form-container">
+            <div class="input-box email">
+                <input type="email" formControlName="email" name="email" id="email-input" required placeholder="Email">
+                <img src="https://cdn-icons-png.flaticon.com/512/6325/6325109.png" alt="user-image" width="25px">
+            </div>
+            <div class="input-box password">
+                <input type="password" name="password" formControlName="password"  id="password-input" required placeholder="Password">
+                <img src="https://cdn-icons-png.flaticon.com/512/2489/2489659.png" alt="lock-image" width="22px">
+            </div>
+            <div class="remember-forgot">
+                <div class="remember">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <div class="forgot">
+                    <a href="#">forgot Password ?</a>
+                </div>
+            </div>
+            <div class="button">
+                <button class="login">Login</button>
+            </div>
+            <div class="register">
+                <p>Don't you have an account ?<a href="#">Register</a></p>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="chat-container ">
+    <button class="back-button" [routerLink]="['/home']">Back</button>
+    <h2 class="chat-title">ChatBot</h2>
+    <p class="chat-subtitle">Ask me anything!</p>
+
+    <div class="chat-box">
+        <div *ngFor="let chat of chatResponse" 
+             [ngClass]="{'user-message': chat.name === 'User', 'bot-message': chat.name === 'AI Bot'}" 
+             class="chat-message">
+            <div class="chat-bubble">
+                <strong *ngIf="chat.name !== 'User'">{{ chat.name }}</strong>
+                {{ chat.description }}
+                <span class="timestamp">{{ chat.time }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-input-container">
+        <input type="text" [(ngModel)]="userQuery" placeholder="Type your query..." />
+        <button class="send-button" (click)="processQuery()">
+            <i class="fa fa-paper-plane"></i> 
+        </button>
+    </div>
+</div>
+
+
+  
+
+
